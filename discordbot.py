@@ -1,24 +1,19 @@
 import discord
 from discord.ext import commands
-from PIL import Image, ImageDraw, ImageFont
-from datetime import datetime
 
-intents = discord.Intents.default()
-intents.typing = False
-intents.presences = False
-
-bot = commands.Bot(command_prefix='!', intents=intents)
+intents = discord.Intents.all()
+bot = commands.Bot(command_prefix='!',intents=intents)
 
 @bot.event
 async def on_ready():
-    print(f'Logged in as {bot.user.name}')
+    print("Ready")
+    
+@bot.command()
+async def embed(ctx, title: str, description: str, image_url: str):
+    embed = discord.Embed(title=title, description=description, color=0x00ff00)
+    embed.set_image(url=image_url)
+    # embed.add_field(name="링크", value=f"[여기를 클릭하세요]({link})", inline=False)
+    await ctx.send(embed=embed)
 
-@client.event
-async def on_member_join(member):
-    print(f'{member} joined at {datetime.now()}\n account created at {member.created_at}\n Profile picture: {member.avatar_url}')
-
-@client.event
-async def on_member_remove(member):
-    print(f'{member} left at {datetime.now()}')
-
-bot.run('MTE1NTM5ODkwMTkxOTEzNzc5Mg.GBe_gw.i_T5BHrZF0K0hlT68xd2MCPA_642jTygd0eorU')
+# 이 부분에 디스코드 봇 토큰을 입력하세요.
+bot.run('MTE1NzAzODAyNTE3NjUyNjg4OA.Gt8oUY.1Uw_gGWcGd7jbyBC3e5PKirwf4afvfPsd_B3R0')
