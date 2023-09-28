@@ -16,4 +16,4 @@ async def embed(ctx, title: str, description: str, image_url: str):
     await ctx.send(embed=embed)
 
 # 이 부분에 디스코드 봇 토큰을 입력하세요.
-bot.run('MTE1NzAzODAyNTE3NjUyNjg4OA.Gt8oUY.1Uw_gGWcGd7jbyBC3e5PKirwf4afvfPsd_B3R0')
+bot.run('MTE1NzAzODAyNTE3NjUyNjg4OA.GMTZ1n.AgtPz926fege_ZhmbiFiJVd1mOOQe2v4ceXsWg')
